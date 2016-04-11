@@ -127,7 +127,6 @@ gulp.task('watch',['dev'],function() {
     gulp.watch('app/scripts/**/*.js',['uglify-dev']);
     gulp.watch('app/images/**/*',['image-dev']);
     gulp.watch('app/views/**/*',['html-dev']);
-    gulp.watch(['dev/app/styles/**/*.less','dev/app/scripts/**/*.js','dev/app/images/**/*','dev/app/views/**/*.html'],browserSync.reload)
-    //gulp.watch(['app/styles/**/*.less','app/scripts/**/*.js','app/images/**/*','app/views/**/*.html'],['build'])
+    //gulp.watch(['dev/app/styles/**/*.less','dev/app/scripts/**/*.js','dev/app/images/**/*','dev/app/views/**/*.html'],browserSync.reload)
 })
 
