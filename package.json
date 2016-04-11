@@ -15,7 +15,8 @@
     "gulp-rev": "^7.0.0",
     "gulp-rev-all": "^0.8.24",
     "gulp-rev-collector": "^1.0.3",
-    "gulp-uglify": "^1.5.3"
+    "gulp-uglify": "^1.5.3",
+    "gulp-sourcemaps": "^1.6.0"
   },
   "devDependencies": {},
   "scripts": {
