@@ -58,7 +58,7 @@ gulp.task('html',['css','uglify','image'],function(){
 })
 
 gulp.task('del:rev',['html'],function(){
-    return del('dist/rev');
+    return del(['dist/rev','dist/css']);
 })
 
 gulp.task('clean',function(){
