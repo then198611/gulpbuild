@@ -7,13 +7,16 @@ var gulp = require('gulp'),
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer'),
     revCollector = require('gulp-rev-collector'),
+    sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync').create();
 
 
 gulp.task('less',function(){
     return gulp.src('app/styles/**/*.less')
+        .pipe(sourcemaps.init())
         .pipe(autoprefixer('last 5 version'))
         .pipe(less({compress : true}))
+        .pipe(sourcemaps.write('../map'))
         .pipe(gulp.dest('dist/css'))
 })
 
@@ -28,8 +31,10 @@ gulp.task('css',['less'],function(){
 
 gulp.task('uglify',function(){
     return gulp.src('app/scripts/**/*.js')
+        .pipe(sourcemaps.init())
         .pipe(rev())
         .pipe(uglify())
+        .pipe(sourcemaps.write('../map'))
         .pipe(gulp.dest('dist/scripts'))
         .pipe(rev.manifest() )
         .pipe(gulp.dest('dist/rev/js'))
